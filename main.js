@@ -18,45 +18,64 @@ function listCustomers(personArray) {
   for (let customer of customers) {
     let newCustomer = document.createElement("li");
 
+
+    let cName = document.createElement("p");
+    let email = document.createElement("p");
+    let address = document.createElement("p");
+    let customerAddress = document.createElement("P");
+    let bday = document.createElement("p");
+    
+
 //image
     let customerImage = document.createElement("img")
     customerImage.src = `${customer.picture.thumbnail}`;
     customerImage.classList.add("br-100","h4","w4","dib","ba", "b--black-05", "pa2");
 
-    let customerText = document.createTextNode(`${customer.name.title}. ${customer.name.first} ${customer.name.last} `);
-    let cName = document.createElement("p");
+    let customerText = document.createTextNode(`${customer.name.title}. ${customer.name.first}${customer.name.last} `);
+    //let cName = document.createElement("p");
 
     let cAddress = document.createTextNode(`${customer.location.street} `)
-    let cCityState = document.createTextNode(`${customer.location.city} ${customer.location.state} `)
-    let customerAddress = document.createElement("P");
+    let cCityState = document.createTextNode(`${customer.location.city} , ${customer.location.state} `)
+    let cDOB = document.createTextNode(`${customer.dob} `)
+    //let customerAddress = document.createElement("P");
     
     
     // let customerEmail = document.createElement("email");
     // customerEmail.src = `${customer.email}`;
 
     let customerEmail = document.createTextNode(`${customer.email}`);
-    let address = document.createElement("p");
-    let email = document.createElement("p");
+    //let address = document.createElement("p");
+    //let email = document.createElement("p");
     address.classList.add("address", "measure", "lh-copy");
 
-
+    
 
 //Name
     customerList.append(newCustomer);
     newCustomer.append(customerText, cAddress);
-    
-    //prepend allowed the image to show
-    newCustomer.prepend(customerImage);
-    newCustomer.classList.add("ph3", "pv3", "bb", "b--light-silver", "display");
+    //newCustomer.classList.add("display");
+
 //Email
     email.classList.add("email");
-    address.appendChild(customerText);
     email.appendChild(customerEmail);
+    address.appendChild(customerText);
     newCustomer.append(address, email);
+
+//address    
+    newCustomer.append(cCityState);
+    let birthday = document.createElement("p");
+    newCustomer.append(cDOB);
+    //prepend allowed the image to show
+    newCustomer.prepend(customerImage);
+    newCustomer.classList.add("ph3", "pv3", "bb", "b--light-silver");
+
+    //break;
+
 
 //Street Address
 //Date of Birth
   };
+  //break;
 };
 
 listCustomers(person);
