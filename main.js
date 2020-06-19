@@ -1,82 +1,64 @@
 import customers from './customers.js'
 
-//you will need their name, address, phone numbers, thumbnail, birthdate, and the date they became a customer
-
-let person = [{
-  thumbNail: 'https://randomuser.me/api/portraits/thumb/women/89.jpg',
-  name: "Pauline Hughes",
-  email: "pauline.hughes@example.com" ,
-  address: "3747 Elgin St, Roseville, IN 93281"
-  // birthdate: "12/08/1977" ,
-  // startDay: "06/29/2004" 
-}]
+//make first letter capital
+function capital(string){
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 function listCustomers(personArray) {
   let customerList = document.querySelector("#customer-list");
-  console.log(customerList);
+  //console.log(customerList);
 
   for (let customer of customers) {
-    let newCustomer = document.createElement("li");
+    let newCustomer = document.createElement("div");
+    
 
+//Create Text Nodes
+    let customerName = document.createTextNode(`${capital(customer.name.title)}. ${capital(customer.name.first)} ${capital(customer.name.last)} `);
+    let cAddress = document.createTextNode(`Address: ${customer.location.street} `)
+    let cCityState = document.createTextNode(`${capital(customer.location.city)}, ${capital(customer.location.state)} `)
+    let cDOB = document.createTextNode(`Birthday: ${customer.dob} `)
+    let customerEmail = document.createTextNode(`Email: ${customer.email}`);
+    // let customerEmail = document.createElement("email");
+    //customerEmail.src = `${customer.email}`;
 
+//create paragraphs; it will NOT run when I put them further down in the code
     let cName = document.createElement("p");
     let email = document.createElement("p");
     let address = document.createElement("p");
-    let customerAddress = document.createElement("P");
-    let bday = document.createElement("p");
-    
+    let cCS = document.createElement("P");
+    let bday = document.createElement("p");     
+
+    address.classList.add("address", "measure", "lh-copy");
+    cName.classList.add("display");
+    address.append(cAddress, cCityState);
+ 
+  //create appendChild
+    cName.appendChild(customerName);
+    email.appendChild(customerEmail);
+    address.appendChild(cAddress);
+    cCS.appendChild(cCityState);
+    bday.appendChild(cDOB);
+
+    newCustomer.append(cName, email, address, cCS, bday);
 
 //image
-    let customerImage = document.createElement("img")
-    customerImage.src = `${customer.picture.thumbnail}`;
-    customerImage.classList.add("br-100","h4","w4","dib","ba", "b--black-05", "pa2");
-
-    let customerText = document.createTextNode(`${customer.name.title}. ${customer.name.first}${customer.name.last} `);
-    //let cName = document.createElement("p");
-
-    let cAddress = document.createTextNode(`${customer.location.street} `)
-    let cCityState = document.createTextNode(`${customer.location.city} , ${customer.location.state} `)
-    let cDOB = document.createTextNode(`${customer.dob} `)
-    //let customerAddress = document.createElement("P");
+    let customerImage = document.createElement("img");
+    //br-100 makes picture a circle
+    customerImage.classList.add("br-100","h4","w3","dib","ba","b--black-05", "pa2");
     
-    
-    // let customerEmail = document.createElement("email");
-    // customerEmail.src = `${customer.email}`;
-
-    let customerEmail = document.createTextNode(`${customer.email}`);
-    //let address = document.createElement("p");
-    //let email = document.createElement("p");
-    address.classList.add("address", "measure", "lh-copy");
-
-    
+    customerImage.src = `${customer.picture.medium}`;
+     //prepend allowed the image to show
+    newCustomer.prepend(customerImage);
+    newCustomer.classList.add("ph3", "pv3", "bb");
 
 //Name
+    //prints EVERYTHING
     customerList.append(newCustomer);
-    newCustomer.append(customerText, cAddress);
-    //newCustomer.classList.add("display");
 
-//Email
-    email.classList.add("email");
-    email.appendChild(customerEmail);
-    address.appendChild(customerText);
-    newCustomer.append(address, email);
-
-//address    
-    newCustomer.append(cCityState);
-    let birthday = document.createElement("p");
-    newCustomer.append(cDOB);
-    //prepend allowed the image to show
-    newCustomer.prepend(customerImage);
-    newCustomer.classList.add("ph3", "pv3", "bb", "b--light-silver");
-
-    //break;
-
-
-//Street Address
-//Date of Birth
   };
-  //break;
+  
 };
 
-listCustomers(person);
+listCustomers(customers);
 
