@@ -4,7 +4,7 @@ const customers = [
   {
     'gender': 'male',
     'name': {
-      'title': 'mr',
+      'school': 'Morehouse College',
       'first': 'curtis',
       'last': 'ryan'
     },
@@ -40,7 +40,7 @@ const customers = [
   }, {
     'gender': 'male',
     'name': {
-      'title': 'mr',
+      'school': 'mr',
       'first': 'martin',
       'last': 'terry'
     },
@@ -76,7 +76,7 @@ const customers = [
   }, {
     'gender': 'female',
     'name': {
-      'title': 'miss',
+      'school': 'miss',
       'first': 'christine',
       'last': 'cooper'
     },
@@ -112,7 +112,7 @@ const customers = [
   }, {
     'gender': 'male',
     'name': {
-      'title': 'mr',
+      'school': 'mr',
       'first': 'norman',
       'last': 'henderson'
     },
@@ -148,7 +148,7 @@ const customers = [
   }, {
     'gender': 'male',
     'name': {
-      'title': 'mr',
+      'school': 'mr',
       'first': 'jose',
       'last': 'rhodes'
     },
@@ -184,7 +184,7 @@ const customers = [
   }, {
     'gender': 'female',
     'name': {
-      'title': 'dr',
+      'school': 'dr',
       'first': 'pauline',
       'last': 'hughes'
     },
@@ -220,7 +220,7 @@ const customers = [
   }, {
     'gender': 'male',
     'name': {
-      'title': 'mr',
+      'school': 'mr',
       'first': 'darren',
       'last': 'hunter'
     },
@@ -256,7 +256,7 @@ const customers = [
   }, {
     'gender': 'male',
     'name': {
-      'title': 'mr',
+      'school': 'mr',
       'first': 'oscar',
       'last': 'walker'
     },
@@ -292,7 +292,7 @@ const customers = [
   }, {
     'gender': 'female',
     'name': {
-      'title': 'miss',
+      'school': 'miss',
       'first': 'ann',
       'last': 'beck'
     },
@@ -328,7 +328,7 @@ const customers = [
   }, {
     'gender': 'nonbinary',
     'name': {
-      'title': 'mx',
+      'school': 'mx',
       'first': 'harper',
       'last': 'morales'
     },
@@ -364,7 +364,7 @@ const customers = [
   }, {
     'gender': 'female',
     'name': {
-      'title': 'miss',
+      'school': 'miss',
       'first': 'tammy',
       'last': 'hill'
     },
@@ -400,7 +400,7 @@ const customers = [
   }, {
     'gender': 'female',
     'name': {
-      'title': 'mrs',
+      'school': 'mrs',
       'first': 'addison',
       'last': 'graves'
     },
